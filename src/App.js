@@ -1,11 +1,11 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
-import Table from "./components/Table";
+import People from "./components/People";
 
 function App() {
   return (
-    <Container maxWidth="sm">
-      <Table />
+    <Container maxWidth="xl">
+      <People />
     </Container>
   );
 }
