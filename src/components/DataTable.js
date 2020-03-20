@@ -12,6 +12,9 @@ export default function DataTable(props) {
   const useStyles = makeStyles({
     table: {
       minWidth: 650
+    },
+    tableHeader: {
+      position: "sticky"
     }
   });
 
@@ -30,7 +33,7 @@ export default function DataTable(props) {
     <TableContainer component={Paper}>
       <Table
         className={classes.table}
-        stickyHeader
+        stickyHeader={true}
         aria-label="People Data Table"
       >
         <TableHead>
