@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -15,21 +15,35 @@ export default function DataTable(props) {
     }
   });
 
+  const StyledTableCell = withStyles(theme => ({
+    head: {
+      backgroundColor: theme.palette.common.black,
+      color: theme.palette.common.white
+    },
+    body: {
+      fontSize: 14
+    }
+  }))(TableCell);
+
   const classes = useStyles();
   return (
     <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
+      <Table
+        className={classes.table}
+        stickyHeader
+        aria-label="People Data Table"
+      >
         <TableHead>
           <TableRow>
-            <TableCell>First Name</TableCell>
-            <TableCell>Middle Name</TableCell>
-            <TableCell>Last Name</TableCell>
-            <TableCell>Gender</TableCell>
-            <TableCell align="right">Age</TableCell>
-            <TableCell>Emails</TableCell>
-            <TableCell>Favorite Feature</TableCell>
-            <TableCell>Features</TableCell>
-            <TableCell>Address</TableCell>
+            <StyledTableCell>First Name</StyledTableCell>
+            <StyledTableCell>Middle Name</StyledTableCell>
+            <StyledTableCell>Last Name</StyledTableCell>
+            <StyledTableCell>Gender</StyledTableCell>
+            <StyledTableCell align="right">Age</StyledTableCell>
+            <StyledTableCell>Emails</StyledTableCell>
+            <StyledTableCell>Favorite Feature</StyledTableCell>
+            <StyledTableCell>Features</StyledTableCell>
+            <StyledTableCell>Address</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
